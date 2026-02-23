@@ -1,9 +1,9 @@
-output "public_ip" {
-  value       = aws_instance.web.public_ip
-  description = "Public IP of the web server"
+output "alb_dns_name" {
+  value       = aws_lb.web.dns_name
+  description = "Public ALB DNS name"
 }
 
-output "public_url" {
-  value       = "http://${aws_instance.web.public_ip}"
-  description = "HTTP URL"
+output "alb_url" {
+  value       = "http://${aws_lb.web.dns_name}"
+  description = "Open this URL"
 }
